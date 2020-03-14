@@ -1,0 +1,1 @@
+manager_advertisement.blade.php
