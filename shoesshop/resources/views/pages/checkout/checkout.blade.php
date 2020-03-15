@@ -139,8 +139,8 @@
                 
 
                 <div class="col-md-6 d-flex" id="show_total" >
-                    <!-- <div class="cart-detail cart-total bg-light p-3 p-md-4">
-           Start Ngân (12/3/2020) 
+                    <div class="cart-detail cart-total bg-light p-3 p-md-4">
+           {{-- Start Ngân (12/3/2020)  --}}
                         <div class="form-group">
                                 <input name="coupon_code" id="coupon_id" class="form-control" rows="3" cols="20" placeholder="Mã giảm giá" required>            
                         </div>
@@ -148,7 +148,7 @@
                                 <input type="button" value="Áp dụng" id="coupon_btn" class="btn btn-theme btn-primary py-3 px-4">
                         </div>
                          <br>
-          ENd Ngân (12/3/2020)
+          {{-- ENd Ngân (12/3/2020) --}}
 
                         <h3 class="billing-heading mb-4">Tổng tiền giỏ hàng</h3>
                         <p class="d-flex">
@@ -160,11 +160,7 @@
                             <?php (int)$phi=40000; ?>
                             <span>{{number_format($phi).' VND'}}</span>
                         </p>
-                        <p class="d-flex">
-                            <span>Giảm giá</span>
-                            <?php $giam= $giamgia ?>
-                            <span>{{'-'number_format($giam).' VND'}}</span>
-                        </p>
+                        
                         
                         <hr>
                         <p class="d-flex total-price">
@@ -172,7 +168,7 @@
                             <?php $subtt =(double)Cart::subtotal(2,'.',''); ?> {{-- bo dau hang nghin, chuyen sau thap phan thanh , --}}
                             <span>{{number_format($subtt+$phi).' VND'}}</span>
                         </p>
-                    </div> -->
+                    </div>
                 </div>
             </div>
                 

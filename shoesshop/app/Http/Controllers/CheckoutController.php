@@ -204,24 +204,26 @@ class CheckoutController extends Controller
                         <h3 class="billing-heading mb-4">Tổng tiền giỏ hàng</h3>
                         <p class="d-flex">
                             <span>Thành tiền</span>
-                            <span>{{number_format((double)Cart::subtotal(2,'.','')).' VND'}}</span>
+                            <span><?php echo number_format((double)Cart::subtotal(2,'.','')).' VND'; ?></span>
                         </p>
                         <p class="d-flex">
                             <span>Phí giao hàng</span>
-                            <?php (int)$phi=40000; ?>
-                            <span>{{number_format($phi).' VND'}}</span>
+                            <?php (int)$phi=40000; ?> 
+                            <span><?php echo number_format($phi).' VND'; ?></span>
                         </p>
                         <p class="d-flex">
                             <span>Giảm giá</span>
-                            <?php $giam= $giamgia ?>
-                            <span>{{'-'number_format($giam).' VND'}}</span>
+                            <?php $giam= $giamgia; ?> 
+                            <span><?php echo '-'.number_format($giam).' VND'; ?></span> 
+                            <!-- MỸ CMT: CHUỖI VỚI CHUỖI PHẢI NỐI BẰNG .
+                            CUỐI CÂU ECHO PHẢI CÓ ; -->
                         </p>
                         
                         <hr>
                         <p class="d-flex total-price">
                             <span>Tổng tiền</span>
-                            <?php $subtt =(double)Cart::subtotal(2,'.',''); ?> {{-- bo dau hang nghin, chuyen sau thap phan thanh , --}}
-                            <span>{{number_format($subtt+$phi).' VND'}}</span>
+                            <?php $subtt =(double)Cart::subtotal(2,'.',''); ?> 
+                            <span><?php echo number_format($subtt+$phi-$giam).' VND'; ?></span>
                         </p>
                     </div>
                 <?php
